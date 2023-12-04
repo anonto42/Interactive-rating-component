@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive rating component</title>
+  <style>
+    :root{
+      --Orange: hsl(25, 97%, 53%);
+      --White: hsl(0, 0%, 100%);
+      --lite: rgba(128, 128, 128, 0.351);
+      --LightGrey: hsl(217, 12%, 63%);
+      --MediumGrey: hsl(216, 12%, 54%);
+      --DarkBlue: hsl(213, 19%, 18%);
+      --VeryDarkBlue: hsl(216, 12%, 8%);
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: 'Overpass', sans-serif;
+      max-width: 1440px;
+      background-color: var(--VeryDarkBlue);
+      color: var(--White);
+    }
+    p{
+      font-size: 15px;
+      color: var(--LightGrey);
+    }
+    .container{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 375px;
+      background-color: var(--DarkBlue);
+      border-radius: 30px;
+      padding: 20px;
+    }
+    .container .starTing{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 17px;
+      background-color: var(--lite);
+      width: 50px;
+      border-radius: 90%;
+    }
+    .container h1{
+      font-size: 25px;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+    .container p{
+      margin-bottom: 20px;
+    }
+    .container .counts{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container .counts .numbers{
+      width: 30px;
+      background-color: var(--lite);
+      padding: 10px 22px;
+      display: flex;
+      justify-content: center;
+      margin: 0 15px;
+      margin-bottom: 20px;
+      border-radius: 90%;
+      cursor: pointer;
+    }
+    .container .counts .numbers:hover{
+      background-color: var(--LightGrey);
+    }
+    .container .counts .numbers ~ :active{
+      background-color: var(--Orange);
+    }
+    .container .counts .numbers h2{
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .container button{
+      width: 90%;
+      background-color: var(--Orange);
+      border: none;
+      border-radius: 50px;
+      padding: 10px ;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--White);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      cursor: pointer;
+    }
+    .container .btn:hover{
+      background-color: var(--White);
+      color: var(--Orange);
+    }
+    .container .btn ~ :active{
+      background-color: var(--White);
+      color: var(--Orange);
+    }
+    .thankyouStatus{
+      display: none;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .thankyouStatus img{
+      margin: 0  20px;
+    }
+    .thankyouStatus .select{
+      background-color: var(--lite);
+      color: var(--Orange);
+      border-radius: 50px;
+      padding: 10px 0;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Rating state start -->
+<div class="container">
+  <div class="rationg">
+  <div class="starTing">
+    <img src="images/icon-star.svg">
+  </div>
+  <h1>How did we do?</h1>
+  <p>Please let us know how we did with your support <br> request. All feedback is appreciated 
+    to help us <br> improve our offering!
+  </p>
+  <div class="counts">
+    <div class="numbers">
+      <h2>1</h2>
+    </div>
+    <div class="numbers">
+      <h2>2</h2>
+    </div>
+    <div class="numbers">
+      <h2>3</h2>
+    </div>
+    <div class="numbers">
+      <h2>4</h2>
+    </div>
+    <div class="numbers">
+      <h2>5</h2>
+    </div>
+  </div>
+  <button class="btn">Submit</button>
+</div>
+<div class="thankyouStatus">
+  <img src="images/illustration-thank-you.svg">
+  <div class="select">
+    <h2>You selected 4 out of 5</h2>
+  </div>
+  <h1>Thank you!</h1>
+  <p>
+    We appreciate you taking the time to give a rating. If you ever need more support, 
+    don’t hesitate to get in touch!
+  </p>
+</div>
+</div>
+
+  <script>
+    document.querySelector('.btn').addEventListener('click', ()=>{
+      document.querySelector('.thankyouStatus').style.display = 'block';
+      document.querySelector('.rationg').style.display = 'none';
+    })
+  </script>
+</body>
+</html>
